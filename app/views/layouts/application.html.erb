@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div id="header"> 
+      <a href="/"><h1>Perfect Pet</h1></a>
+      <h2>Helpful tips to help you find your next best friend!</h2>
+    </div>
+    <%= yield %>
+    <footer>Written by Aaron</footer>
+  </body>
+</html>
