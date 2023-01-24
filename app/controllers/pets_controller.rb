@@ -6,10 +6,21 @@ class PetsController < ApplicationController
     @bugs = Pet.where(pet_type: "BUG")
   end
 
-  def create
-  end
-
   def show
     @pet = Pet.find(params[:id])
+  end
+
+  def search
+    
+  end
+
+  private
+
+  def search_pets
+    render turbo_stream:
+      turbo_stream.replace("pet-search",
+        partial: "pets/searchresults".
+        locals: {pets: pets}
+      )
   end
 end

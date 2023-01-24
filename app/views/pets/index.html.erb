@@ -1,34 +1,11 @@
 <button class="accordion">Dogs</button>
-<div class="pet-list">
-    <%@dogs.each do |dog|%>
-        <div class="pet"><a href="/pets/<%=dog.id%>"><%=dog.name%></a></div>
-        <%end%>
-    </ul>
-</div>
+<%= render "pets/pet-list", pets: @dogs%>
 
 <button class="accordion">Cats</button>
-<div class="pet-list">
-    <ul>
-        <%@cats.each do |cat|%>
-            <div class="pet"><a href="/pets/<%=cat.id%>"><%=cat.name%></a></div>
-        <%end%>
-    </ul>
-</div>
+<%= render "pets/pet-list", pets: @cats%>
 
 <button class="accordion">Snakes</button>
-<div class="pet-list">
-    <ul>
-        <%@snakes.each do |snek|%>
-            <div class="pet"><a href="/pets/<%=snek.id%>"><%=snek.name%></a></div>
-        <%end%>
-    </ul>
-</div>
+<%= render "pets/pet-list", pets: @snakes%>
 
 <button class="accordion">Bugs</button>
-<div class="pet-list">
-    <ul>
-        <%@bugs.each do |bug|%>
-            <div class="pet"><a href="/pets/<%=bug.id%>"><%=bug.name%></a></div>
-        <%end%>
-    </ul>
-</div>
+<%= render "pets/pet-list", pets: @bugs%>
