@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_10_011245) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_25_191337) do
   create_table "pets", force: :cascade do |t|
     t.string "name"
     t.text "details"
@@ -19,6 +19,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_10_011245) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "pet_type"
+    t.boolean "child_friendly"
+    t.integer "ease_of_care"
+    t.integer "avg_weight"
+    t.integer "min_age"
+    t.integer "max_age"
+    t.integer "cost"
+    t.integer "intelligence"
   end
 
 end

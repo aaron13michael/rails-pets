@@ -1,6 +1,6 @@
 <div class="pet-list">
     <%pets.each do |pet|%>
-        <div class="pet"><a href="/pets/<%=pet.id%>"><%=pet.name%></a></div>
-        <%end%>
+        <%=render "pets/pet-list-item", pet: pet%>    
+    <%end%>
     </ul>
 </div>

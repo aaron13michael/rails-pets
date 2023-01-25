@@ -4,7 +4,4 @@ Rails.application.routes.draw do
   get 'pets/:id', to: 'pets#show', as: 'pets_show'
   get 'pets/search', to: 'pets#search', as: 'pets_search' 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

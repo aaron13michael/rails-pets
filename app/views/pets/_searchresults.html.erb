@@ -1,3 +1,5 @@
 <%= turbo_frame_tag "search-results" do %>
-    <div></div>
+    <%@pets.each do |pet|%>
+        <%=render "pets/pet-list-item", pet: pet%> 
+    <%end%>
 <%end%>

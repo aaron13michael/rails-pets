@@ -1,0 +1,9 @@
+<div id="search">
+<%= form_with url: "pets/search", method :get do |form| %>
+    <%= form.label :pet_type, "Type:" %>
+    <%= form.select :pet_type, ["Dog", "Cat", "Reptile", "Bug"], selected:"Dog"%>
+
+    <%= form.label :difficulty, "Difficulty:" %>
+    <%= form.select :difficulty, ["Beginner", "Easy", "Intermediate", "Hard", "Very Hard"], selected:"Beginner"%>
+<%end%>
+</div>
