@@ -5,5 +5,22 @@
 
     <%= form.label :difficulty, "Difficulty:" %>
     <%= form.select :difficulty, ["Beginner", "Easy", "Intermediate", "Hard", "Very Hard"], selected:"Beginner"%>
+
+    <%= form.label :difficulty, "Maximum Life Span:" %>
+    <%= form.select :difficulty, ["Less than 5 years", "5 years", "10 years", "15 years", "20+ years"], selected:"Less than 5 years"%>
+
+    <%= form.radio_button :size, "small", "small"%>
+    <%= form.label :size_small, "Small" %>
+    <%= form.radio_button :size, "medium", "medium"%>
+    <%= form.label :size_medium, "Mid-size" %>
+    <%= form.radio_button :size, "large", "large"%>
+    <%= form.label :size_large, "Large" %>
+
+    <%= form.label :cost, "Maximum Monthly Cost:" %>
+    <%= form.number_field :cost, in: 1.0..500.0, step:0.01%> 
+
+    <%= form.label :intelligence, "Intelligence Level:"%>
+    <%= form.select :intelligence, ["Low", "Limited", "Moderate", "High",], selected:"Low"%>
+
 <%end%>
 </div>
