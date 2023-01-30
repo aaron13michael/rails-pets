@@ -11,15 +11,19 @@ class PetsController < ApplicationController
   end
 
   def search
-    
+    @pets = []
+  end
+
+  def update_search
+    search_pets(Pet.all)
   end
 
   private
 
-  def search_pets
+  def search_pets(pets)
     render turbo_stream:
-      turbo_stream.replace("pet-search",
-        partial: "pets/searchresults".
+      turbo_stream.replace("search-results",
+        partial: "pets/searchresults",
         locals: {pets: pets}
       )
   end
