@@ -15,7 +15,11 @@ class PetsController < ApplicationController
   end
 
   def update_search
-    search_pets(Pet.all)
+    @search_query = Pet.where(
+      pet_type: params[:pet_type],
+      ease_of_care: params[:difficulty] #TODO: Rename column to difficulty
+    )
+    search_pets(@search_query)
   end
 
   private

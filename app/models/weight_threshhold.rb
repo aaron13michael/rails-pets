@@ -1,0 +1,2 @@
+class WeightThreshhold < ApplicationRecord
+end
