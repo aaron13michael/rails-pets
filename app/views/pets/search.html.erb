@@ -20,7 +20,7 @@
         <%= form.number_field :cost, in: 1.0..500.0, step:0.01%> 
 
         <%= form.label :intelligence, "Intelligence Level:"%>
-        <%= form.select :intelligence, [["Low", 1], ["Limited",2], ["Moderate",3], ["High",4],], selected:"Low"%>
+        <%= form.select :intelligence, [["Low", 1], ["Limited",2], ["Moderate",3], ["High",4],]%>
 
         <%= form.submit "Search"%>
     <%end%>
