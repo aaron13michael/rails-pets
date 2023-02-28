@@ -1,13 +1,13 @@
 <div id="search">
     <%= form_with url: update_search_path, method: :get do |form| %>
         <%= form.label :pet_type, "Type:" %>
-        <%= form.select :pet_type, ["Dog", "Cat", "Reptile", "Bug"], selected:"Dog"%>
+        <%= form.select :pet_type, ["Dog", "Cat", "Reptile", "Bug"], include_blank:true, selected:"" %>
 
         <%= form.label :difficulty, "Difficulty:" %>
-        <%= form.select :difficulty, [["Beginner", 1], ["Easy", 2], ["Intermediate",3], ["Hard",4], ["Very Hard",5]], selected:"Beginner"%>
+        <%= form.select :difficulty, [["Beginner", 1], ["Easy", 2], ["Intermediate",3], ["Hard",4], ["Very Hard",5]], include_blank:true, selected:"" %>
 
         <%= form.label :max_age, "Maximum Life Span:" %>
-        <%= form.select :max_age, [["5 years or less", 5], ["10 years", 10], ["15 years", 15], ["20+ years", 20]], selected:"5 years or less"%>
+        <%= form.select :max_age, [["5 years or less", 5], ["10 years", 10], ["15 years", 15], ["20+ years", 20]], include_blank:true, selected:"" %>
 
         <%= form.radio_button :size, "small"%>
         <%= form.label :size_small, "Small" %>
@@ -20,7 +20,7 @@
         <%= form.number_field :cost, in: 1.0..500.0, step:0.01%> 
 
         <%= form.label :intelligence, "Intelligence Level:"%>
-        <%= form.select :intelligence, [["Low", 1], ["Limited",2], ["Moderate",3], ["High",4],]%>
+        <%= form.select :intelligence, [["Low", 1], ["Limited",2], ["Moderate",3], ["High",4],], include_blank:true, selected:""%>
 
         <%= form.submit "Search"%>
     <%end%>

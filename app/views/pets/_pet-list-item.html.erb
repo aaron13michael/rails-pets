@@ -1,1 +1,1 @@
-<div class="pet-<%=pet.pet_type%>"><%= link_to pet.name, "pets_show", id: pet.id%></div>
+<div class="pet-<%=pet.pet_type%>"><%= link_to pet.name, pet_show_path(id: pet.id)%></div>
