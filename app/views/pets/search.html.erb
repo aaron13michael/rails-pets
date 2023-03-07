@@ -1,7 +1,7 @@
 <div id="search">
     <%= form_with url: update_search_path, method: :get do |form| %>
         <%= form.label :pet_type, "Type:" %>
-        <%= form.select :pet_type, ["Dog", "Cat", "Reptile", "Bug"], include_blank:true, selected:"" %>
+        <%= form.select :pet_type, [["",""],["Dog", "DOG"], ["Cat", "CAT"], ["Reptile", "REPTILE"], ["Bug", "BUG"]], include_blank:true, selected:"" %>
 
         <%= form.label :difficulty, "Difficulty:" %>
         <%= form.select :difficulty, [["Beginner", 1], ["Easy", 2], ["Intermediate",3], ["Hard",4], ["Very Hard",5]], include_blank:true, selected:"" %>
