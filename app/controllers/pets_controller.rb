@@ -17,14 +17,22 @@ class PetsController < ApplicationController
   def update_search
     @search_query = Pet.all
 
-    for key in params
-      puts params[key]
+    if params.has_key?("pet_type")
+      @search_query = @search_query.where(pet_type: params["pet_type"]) unless params["pet_type"].blank?
+    end
+    if params.has_key?("difficulty")
+      @search_query = @search_query.where(difficulty: params["difficulty"]) unless params["difficulty"].blank?
+    end
+    if params.has_key?("size")
+      @search_query = @search_query.where(weight_class: params["size"]) unless params["size"].blank?
+    end
+    if params.has_key?("intelligence")
+      @search_query = @search_query.where(intelligence: params["intelligence"]) unless params["intelligence"].blank?
+    end
+    if params.has_key?("cost")
+      @search_query = @search_query.where("pets.cost <= :cost", {cost: params["cost"]}) unless params["cost"].blank?
     end
 
-    form_keys = ["pet_type", "difficulty", "size", "cost"]
-    for key in form_keys
-      @search_query = update_search_query key, @search_query
-    end
 
     if params.has_key?("max_age")
       unless params["max_age"].blank?
@@ -32,7 +40,7 @@ class PetsController < ApplicationController
           age_query = "pets.max_age < :max_age and pets.max_age > (:max_age - 5)" 
         else
           age_query = "pets.max_age >= 20"
-          @search_query = @search_query.where(age_query, {max_age: params[:max_age].to_i} )
+          @search_query = @search_query.where(age_query, {max_age: params[:max_age]} )
         end
       end
     end
@@ -50,13 +58,4 @@ class PetsController < ApplicationController
       )
   end
 
-  def update_search_query(key, query)
-    if params.has_key?(key)
-      return query.where(
-        pet_type: params[:pet_type]
-      ) unless params[key].blank?
-    end
-
-    return query
-  end
 end
